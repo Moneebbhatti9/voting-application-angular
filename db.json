@@ -1,0 +1,217 @@
+{
+  "Admin": [
+    {
+      "id": "168",
+      "name": "Admin",
+      "email": "Admin@gmail.com",
+      "registerAs": "Admin",
+      "password": "$2a$10$JViPADPztCs3kV6zRFVn8uesZD0EaqWOJUu6wcopNxu6GYj8D4poW"
+    }
+  ],
+  "voters": [
+    {
+      "id": "559",
+      "name": "Qazii Aimal",
+      "email": "dene@mailinator.com",
+      "registerAs": "Voter",
+      "password": "$2a$10$ZcCX5qd8blYBpQ.LGWnPje/fO24ZPBXnL.mbL187WUvgK6ZrtG2Eu"
+    },
+    {
+      "id": "275",
+      "name": "Rerum id duis conseq",
+      "email": "mukudeb@mailinator.com",
+      "registerAs": "Voter",
+      "password": "$2a$10$zPgJbFkQEA1wUmx5DG1JZOxk2HjRvTDDXYI9uknb.ONTSFTw/3LOS"
+    },
+    {
+      "id": 10,
+      "name": "aimal voter",
+      "email": "aimal22@gmail.com",
+      "registerAs": "Voter",
+      "password": "$2a$10$hSblEj7jdN.qn1TVDizamOYjEC6ZCpZy619OidTONYqwWdcjBv0Wq"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "275",
+      "name": "Rerum id duis conseq",
+      "email": "mukudeb@mailinator.com",
+      "registerAs": "Voter",
+      "password": "$2a$10$zPgJbFkQEA1wUmx5DG1JZOxk2HjRvTDDXYI9uknb.ONTSFTw/3LOS"
+    },
+    {
+      "id": "275",
+      "name": "Rerum id duis conseq",
+      "email": "mukudeb@mailinator.com",
+      "registerAs": "Voter",
+      "password": "$2a$10$zPgJbFkQEA1wUmx5DG1JZOxk2HjRvTDDXYI9uknb.ONTSFTw/3LOS"
+    },
+    {
+      "id": "275",
+      "name": "Rerum id duis conseq",
+      "email": "mukudeb@mailinator.com",
+      "registerAs": "Voter",
+      "password": "$2a$10$zPgJbFkQEA1wUmx5DG1JZOxk2HjRvTDDXYI9uknb.ONTSFTw/3LOS"
+    },
+    {
+      "id": "275",
+      "name": "Rerum id duis conseq",
+      "email": "mukudeb@mailinator.com",
+      "registerAs": "Voter",
+      "password": "$2a$10$zPgJbFkQEA1wUmx5DG1JZOxk2HjRvTDDXYI9uknb.ONTSFTw/3LOS"
+    },
+    {
+      "id": 730,
+      "name": "aimal",
+      "email": "aimal32@gmail.com",
+      "registerAs": "Candidate",
+      "password": "$2a$10$a14DjOyHyap6pMmzJRzB/.OXcLtihV0dgSmU7ndUOA1wB2HWiApXe"
+    }
+  ],
+  "city-level-positions": [
+    {
+      "id": "10",
+      "name": "Mayor 2",
+      "positionLevel": "City Level",
+      "cityName": "Islamabad"
+    },
+    {
+      "id": "8",
+      "name": "CBK",
+      "positionLevel": "City Level",
+      "cityName": "Kamra"
+    },
+    {
+      "id": "7",
+      "name": "CBI",
+      "positionLevel": "City Level",
+      "cityName": "Islamabad"
+    },
+    {
+      "id": "3",
+      "name": "PP-12",
+      "positionLevel": "City Level",
+      "cityName": "Multan"
+    },
+    {
+      "id": "5",
+      "name": "PP",
+      "positionLevel": "City Level",
+      "cityName": "Karachi"
+    },
+    {
+      "id": "9",
+      "name": "MPA-2",
+      "positionLevel": "City Level",
+      "cityName": "Peshawar"
+    }
+  ],
+  "country-level-positions": [
+    {
+      "id": "74b7",
+      "name": "NA-45",
+      "positionLevel": "Country Level"
+    },
+    {
+      "id": "2",
+      "name": "President",
+      "positionLevel": "Country Level"
+    },
+    {
+      "id": "7",
+      "name": "President",
+      "positionLevel": "Country Level"
+    },
+    {
+      "id": "7",
+      "name": "Minister",
+      "positionLevel": "Country Level"
+    }
+  ],
+  "citylevelCandidates": [
+    {
+      "id": "e79a",
+      "name": "Pariatur Eu velit v",
+      "age": "Molestiae ut dolorum",
+      "party": "Sapiente nihil moles",
+      "cityName": "Multan",
+      "cityPosition": "PP-12",
+      "countryPosition": "",
+      "gender": "female",
+      "voteCount": 4,
+      "userEmail": "Admin@gmail.com"
+    },
+    {
+      "id": "ac11",
+      "name": "Dolor ex porro nostr",
+      "age": "Non enim quaerat mag",
+      "party": "Sit amet delectus",
+      "cityName": "Karachi",
+      "cityPosition": "Mayor 2",
+      "countryPosition": null,
+      "gender": "male",
+      "voteCount": 1,
+      "userEmail": "Admin@gmail.com"
+    },
+    {
+      "id": "a7f0",
+      "name": "Numquam blanditiis e",
+      "age": "Deleniti vero quisqu",
+      "party": "Cumque do reprehende",
+      "cityName": "Kamra",
+      "cityPosition": "CBK",
+      "countryPosition": null,
+      "gender": "male",
+      "voteCount": 2,
+      "userEmail": "aimal22@gmail.com"
+    },
+    {
+      "id": "7cf4",
+      "name": "aimal",
+      "age": "30",
+      "party": "aimal",
+      "cityName": "Kamra",
+      "cityPosition": "PP-12",
+      "countryPosition": "",
+      "gender": "male",
+      "voteCount": 0,
+      "userEmail": "aimal22@gmail.com"
+    }
+  ],
+  "countrylevelCandidates": [
+    {
+      "id": "2dfb",
+      "name": "Esse minim quis ear",
+      "age": "Consequatur ad fugi",
+      "party": "Ipsum maiores ducim",
+      "cityName": null,
+      "cityPosition": null,
+      "countryPosition": "President",
+      "gender": "female",
+      "voteCount": 5,
+      "userEmail": "Admin@gmail.com"
+    },
+    {
+      "id": "1fac",
+      "name": "Hammad",
+      "age": "45",
+      "party": "PAT",
+      "cityName": "",
+      "cityPosition": "",
+      "countryPosition": "President",
+      "gender": "male",
+      "voteCount": 4
+    },
+    {
+      "id": "97f8",
+      "name": "rahim paradesi",
+      "age": "23",
+      "party": "PML-N",
+      "cityName": "",
+      "cityPosition": "",
+      "countryPosition": "Minister",
+      "gender": "male",
+      "voteCount": 0
+    }
+  ]
+}

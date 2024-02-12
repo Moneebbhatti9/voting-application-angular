@@ -1,0 +1,169 @@
+<div
+  class="mt-4 mb-4 gap-4"
+  style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  "
+>
+  <div>
+    <button mat-raised-button color="accent" (click)="toggleTable('city')">
+      City Election
+    </button>
+    <button mat-raised-button color="primary" (click)="toggleTable('country')">
+      Country Election
+    </button>
+  </div>
+</div>
+
+<div
+  class="mat-elevation-z8 px-5"
+  style="display: flex; flex-direction: column"
+  *ngIf="showcityTable"
+>
+  <div
+    style="display: flex; justify-content: space-around; align-items: baseline"
+  >
+    <h2 class="pt-4">All Applied Candidates For City Election</h2>
+    <div class="filter-dropdown">
+      <mat-form-field appearance="fill">
+        <mat-label>Filter by Position</mat-label>
+        <mat-select
+          (selectionChange)="applyCityFilter()"
+          [(value)]="selectedCityPosition"
+        >
+          <mat-option *ngFor="let p of uniqueCityPositions" [value]="p">
+            {{ p }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="filter-dropdown">
+      <mat-form-field appearance="fill">
+        <mat-label>Filter by City</mat-label>
+        <mat-select
+          (selectionChange)="applyCityFilter()"
+          [(value)]="selectedCity"
+        >
+          <mat-option *ngFor="let c of uniqueCities" [value]="c">
+            {{ c }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <table
+    mat-table
+    [dataSource]="citydataSource"
+    class="mat-elevation-z8 custom-table"
+  >
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>No.</th>
+      <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Candidate Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="party">
+      <th mat-header-cell *matHeaderCellDef>Party</th>
+      <td mat-cell *matCellDef="let element">{{ element.party }}</td>
+    </ng-container>
+    <ng-container matColumnDef="city">
+      <th mat-header-cell *matHeaderCellDef>City</th>
+      <td mat-cell *matCellDef="let element">{{ element.cityName }}</td>
+    </ng-container>
+    <ng-container matColumnDef="appliedPosition">
+      <th mat-header-cell *matHeaderCellDef>Position</th>
+      <td mat-cell *matCellDef="let element">{{ element.cityPosition }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let element">
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="giveVote(element.id)"
+        >
+          Give Vote
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedCityColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedCityColumns"></tr>
+  </table>
+</div>
+
+<div
+  class="mat-elevation-z8 px-5"
+  style="display: flex; flex-direction: column"
+  *ngIf="showcountryTable"
+>
+  <div
+    style="display: flex; justify-content: space-around; align-items: baseline"
+  >
+    <h2 class="pt-4">All Applied Candidates For Country Election</h2>
+    <div class="filter-dropdown">
+      <mat-form-field appearance="fill">
+        <mat-label>Filter by Position</mat-label>
+        <mat-select
+          (selectionChange)="applyCountryFilter()"
+          [(value)]="selectedCountryPosition"
+        >
+          <mat-option *ngFor="let p of uniqueCountryPositions" [value]="p">
+            {{ p }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <table
+    mat-table
+    [dataSource]="countrydataSource"
+    class="mat-elevation-z8 custom-table"
+  >
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>No.</th>
+      <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Candidate Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="party">
+      <th mat-header-cell *matHeaderCellDef>Party</th>
+      <td mat-cell *matCellDef="let element">{{ element.party }}</td>
+    </ng-container>
+    <ng-container matColumnDef="city">
+      <th mat-header-cell *matHeaderCellDef>City</th>
+      <td mat-cell *matCellDef="let element">{{ element.cityName }}</td>
+    </ng-container>
+    <ng-container matColumnDef="appliedPosition">
+      <th mat-header-cell *matHeaderCellDef>Position</th>
+      <td mat-cell *matCellDef="let element">{{ element.countryPosition }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let element">
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="giveVote(element.id)"
+        >
+          Give Vote
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedCountryColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedCountryColumns"></tr>
+  </table>
+</div>

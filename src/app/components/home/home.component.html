@@ -1,0 +1,78 @@
+<div class="container">
+  <div class="header">
+    <h2>Welcome to the Voting Application</h2>
+  </div>
+
+  <div style="margin-bottom: 10px">
+    <h2>City Election</h2>
+
+    <div class="filter-dropdown">
+      <label for="cityPositionFilter">Filter by Position:</label>
+      <select
+        id="cityPositionFilter"
+        [(ngModel)]="selectedCityPosition"
+        (ngModelChange)="applyCityFilter()"
+      >
+        <option value="">All Positions</option>
+        <option *ngFor="let position of uniqueCityPositions" [value]="position">
+          {{ position }}
+        </option>
+      </select>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Position</th>
+          <th>Vote Count</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let d of getCityTableData()">
+          <td>{{ d.name }}</td>
+          <td>{{ d.cityPosition }}</td>
+          <td>{{ d.voteCount }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div>
+    <h2>Country Election</h2>
+
+    <div class="filter-dropdown">
+      <label for="countryPositionFilter">Filter by Position:</label>
+      <select
+        id="countryPositionFilter"
+        [(ngModel)]="selectedCountryPosition"
+        (ngModelChange)="applyCountryFilter()"
+      >
+        <option value="">All Positions</option>
+        <option
+          *ngFor="let position of uniqueCountryPositions"
+          [value]="position"
+        >
+          {{ position }}
+        </option>
+      </select>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Position</th>
+          <th>Vote Count</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let d of getCountryTableData()">
+          <td>{{ d.name }}</td>
+          <td>{{ d.countryPosition }}</td>
+          <td>{{ d.voteCount }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

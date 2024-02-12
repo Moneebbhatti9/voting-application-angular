@@ -1,0 +1,27 @@
+<!-- main.component.html -->
+<div
+  class="mt-4 gap-4"
+  style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  "
+>
+  <div>
+    <button mat-raised-button color="accent" (click)="toggleForm('city')">
+      Apply For City Position
+    </button>
+    <button mat-raised-button color="primary" (click)="toggleForm('country')">
+      Apply For Country Position
+    </button>
+  </div>
+
+  <div style="width: 70%">
+    <app-positionForm
+      (formSubmit)="handleFormSubmit($event)"
+      [formType]="formType"
+      *ngIf="showForm"
+    ></app-positionForm>
+  </div>
+</div>

@@ -1,0 +1,97 @@
+<mat-card>
+  <mat-card-header style="margin-bottom: 10px">
+    <mat-card-title>{{
+      formType === "city" ? "City Position Form" : "Country Position Form"
+    }}</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form [formGroup]="positionForm" (ngSubmit)="onSubmit()">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="name" placeholder="Candidate Name" />
+        <mat-error *ngIf="positionForm.get('name')?.hasError('required')">
+          Candidate Name is required
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput formControlName="age" placeholder="Candidate age" />
+        <mat-error *ngIf="positionForm.get('age')?.hasError('required')">
+          Candidate Age is required
+        </mat-error>
+        <mat-error
+          *ngIf="
+            positionForm.get('age')?.hasError('invalidAge') &&
+            positionForm.get('age')?.touched
+          "
+        >
+          {{
+            formType === "city"
+              ? "Age should be minimum 25 years for City Election"
+              : "Age should be minimum 30 years for Country Election"
+          }}
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput formControlName="party" placeholder="Candidate Party" />
+        <mat-error *ngIf="positionForm.get('party')?.hasError('required')">
+          Candidate Party is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width" *ngIf="formType === 'city'">
+        <mat-label>City</mat-label>
+        <mat-select formControlName="cityName" placeholder="Select">
+          <mat-option *ngFor="let city of cityData" [value]="city.cityName">{{
+            city.cityName
+          }}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="positionForm.get('cityName')?.hasError('required')">
+          Please select a city
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width" *ngIf="formType === 'city'">
+        <mat-label>City Positions</mat-label>
+        <mat-select formControlName="cityPosition" placeholder="Select">
+          <mat-option
+            *ngFor="let position of cityData"
+            [value]="position.name"
+            >{{ position.name }}</mat-option
+          >
+        </mat-select>
+        <mat-error
+          *ngIf="positionForm.get('cityPosition')?.hasError('required')"
+        >
+          Please select a city position
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width" *ngIf="formType === 'country'">
+        <mat-label>Country Positions</mat-label>
+        <mat-select formControlName="countryPosition" placeholder="Select">
+          <mat-option
+            [value]="country.name"
+            *ngFor="let country of countryData"
+            >{{ country.name }}</mat-option
+          >
+        </mat-select>
+        <mat-error
+          *ngIf="positionForm.get('countryPosition')?.hasError('required')"
+        >
+          Please select a country position
+        </mat-error>
+      </mat-form-field>
+
+      <mat-label>Gender</mat-label>
+      <mat-radio-group formControlName="gender">
+        <mat-radio-button value="male">Male</mat-radio-button>
+        <mat-radio-button value="female">Female</mat-radio-button>
+      </mat-radio-group>
+
+      <hr />
+
+      <button mat-raised-button color="primary" type="submit">Apply</button>
+      <button mat-raised-button color="warn" type="button">Cancel</button>
+    </form>
+  </mat-card-content>
+</mat-card>
