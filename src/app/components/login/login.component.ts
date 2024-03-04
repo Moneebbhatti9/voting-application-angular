@@ -57,7 +57,7 @@ export class LoginComponent implements OnInit {
                     this.toastr.success('Successfully Login as Voter');
                     this.router.navigate(['/home']);
                   }
-                }, 200);
+                }, 500);
               } else {
                 this.toastr.error('Invalid email or password', 'Error');
               }

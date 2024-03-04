@@ -24,7 +24,7 @@
       "password": "$2a$10$zPgJbFkQEA1wUmx5DG1JZOxk2HjRvTDDXYI9uknb.ONTSFTw/3LOS"
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "aimal voter",
       "email": "aimal22@gmail.com",
       "registerAs": "Voter",
@@ -61,11 +61,18 @@
       "password": "$2a$10$zPgJbFkQEA1wUmx5DG1JZOxk2HjRvTDDXYI9uknb.ONTSFTw/3LOS"
     },
     {
-      "id": 730,
+      "id": "730",
       "name": "aimal",
       "email": "aimal32@gmail.com",
       "registerAs": "Candidate",
       "password": "$2a$10$a14DjOyHyap6pMmzJRzB/.OXcLtihV0dgSmU7ndUOA1wB2HWiApXe"
+    },
+    {
+      "id": 118,
+      "name": "Nostrud omnis offici",
+      "email": "hunyci@mailinator.com",
+      "registerAs": "Candidate",
+      "password": "$2a$10$SBWkpUfC3Zys5rzSU8eQ.ezalb8YYqPt2iZgN/u2zwelZ6/o3cWK6"
     }
   ],
   "city-level-positions": [
@@ -138,8 +145,8 @@
       "cityPosition": "PP-12",
       "countryPosition": "",
       "gender": "female",
-      "voteCount": 4,
-      "userEmail": "Admin@gmail.com"
+      "voteCount": 5,
+      "userEmail": "hunyci@mailinator.com"
     },
     {
       "id": "ac11",
@@ -162,8 +169,8 @@
       "cityPosition": "CBK",
       "countryPosition": null,
       "gender": "male",
-      "voteCount": 2,
-      "userEmail": "aimal22@gmail.com"
+      "voteCount": 3,
+      "userEmail": "hunyci@mailinator.com"
     },
     {
       "id": "7cf4",
@@ -176,6 +183,16 @@
       "gender": "male",
       "voteCount": 0,
       "userEmail": "aimal22@gmail.com"
+    },
+    {
+      "id": "46fb",
+      "name": "Animi laboris vitae",
+      "age": "Aut qui accusantium ",
+      "party": "Officiis esse rem q",
+      "cityName": "Islamabad",
+      "cityPosition": "PP-12",
+      "countryPosition": "",
+      "gender": "male"
     }
   ],
   "countrylevelCandidates": [
