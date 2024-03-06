@@ -10,18 +10,11 @@
   ],
   "voters": [
     {
-      "id": "559",
-      "name": "Qazii Aimal",
-      "email": "dene@mailinator.com",
-      "registerAs": "Voter",
-      "password": "$2a$10$ZcCX5qd8blYBpQ.LGWnPje/fO24ZPBXnL.mbL187WUvgK6ZrtG2Eu"
-    },
-    {
-      "id": "275",
-      "name": "Rerum id duis conseq",
+      "name": "Rerum id dui",
       "email": "mukudeb@mailinator.com",
-      "registerAs": "Voter",
-      "password": "$2a$10$zPgJbFkQEA1wUmx5DG1JZOxk2HjRvTDDXYI9uknb.ONTSFTw/3LOS"
+      "password": "$2a$10$ftj2Zr/kun/Fc9YTjFpR5..Faf65n3Etqq3.XovvWu26qnpa3K9IC",
+      "confirmPassword": "moneeb",
+      "id": "275"
     },
     {
       "id": "10",
@@ -29,46 +22,25 @@
       "email": "aimal22@gmail.com",
       "registerAs": "Voter",
       "password": "$2a$10$hSblEj7jdN.qn1TVDizamOYjEC6ZCpZy619OidTONYqwWdcjBv0Wq"
+    },
+    {
+      "id": 415,
+      "name": "Shoaib",
+      "email": "shoaib@gmail.com",
+      "registerAs": "Voter",
+      "password": "$2a$10$DdPAEIOHoaCJ/6zYOGHuhubZZ0ZRIS5wtD45hzalntwMe38HKK2em"
     }
   ],
   "candidates": [
     {
-      "id": "275",
-      "name": "Rerum id duis conseq",
-      "email": "mukudeb@mailinator.com",
-      "registerAs": "Voter",
-      "password": "$2a$10$zPgJbFkQEA1wUmx5DG1JZOxk2HjRvTDDXYI9uknb.ONTSFTw/3LOS"
-    },
-    {
-      "id": "275",
-      "name": "Rerum id duis conseq",
-      "email": "mukudeb@mailinator.com",
-      "registerAs": "Voter",
-      "password": "$2a$10$zPgJbFkQEA1wUmx5DG1JZOxk2HjRvTDDXYI9uknb.ONTSFTw/3LOS"
-    },
-    {
-      "id": "275",
-      "name": "Rerum id duis conseq",
-      "email": "mukudeb@mailinator.com",
-      "registerAs": "Voter",
-      "password": "$2a$10$zPgJbFkQEA1wUmx5DG1JZOxk2HjRvTDDXYI9uknb.ONTSFTw/3LOS"
-    },
-    {
-      "id": "275",
-      "name": "Rerum id duis conseq",
-      "email": "mukudeb@mailinator.com",
-      "registerAs": "Voter",
-      "password": "$2a$10$zPgJbFkQEA1wUmx5DG1JZOxk2HjRvTDDXYI9uknb.ONTSFTw/3LOS"
-    },
-    {
-      "id": "730",
-      "name": "aimal",
+      "name": "Qazi aimal",
       "email": "aimal32@gmail.com",
-      "registerAs": "Candidate",
-      "password": "$2a$10$a14DjOyHyap6pMmzJRzB/.OXcLtihV0dgSmU7ndUOA1wB2HWiApXe"
+      "password": "$2a$10$MedxtasGww7njvg44oO7HeoMpkm2VwtkSgMQepvfZVU427AAs1PNa",
+      "confirmPassword": "123456",
+      "id": "730"
     },
     {
-      "id": 118,
+      "id": "118",
       "name": "Nostrud omnis offici",
       "email": "hunyci@mailinator.com",
       "registerAs": "Candidate",
@@ -111,6 +83,24 @@
       "name": "MPA-2",
       "positionLevel": "City Level",
       "cityName": "Peshawar"
+    },
+    {
+      "id": "8",
+      "name": "cm",
+      "positionLevel": "City Level",
+      "cityName": "Punjab"
+    },
+    {
+      "id": "4",
+      "name": "CM",
+      "positionLevel": "City Level",
+      "cityName": "Balochistan"
+    },
+    {
+      "id": "6",
+      "name": "CM",
+      "positionLevel": "City Level",
+      "cityName": "KPK"
     }
   ],
   "country-level-positions": [
@@ -133,6 +123,11 @@
       "id": "7",
       "name": "Minister",
       "positionLevel": "Country Level"
+    },
+    {
+      "id": "10",
+      "name": "President",
+      "positionLevel": "Country Level"
     }
   ],
   "citylevelCandidates": [
@@ -145,8 +140,8 @@
       "cityPosition": "PP-12",
       "countryPosition": "",
       "gender": "female",
-      "voteCount": 5,
-      "userEmail": "hunyci@mailinator.com"
+      "voteCount": 6,
+      "userEmail": "Admin@gmail.com"
     },
     {
       "id": "ac11",
@@ -169,8 +164,8 @@
       "cityPosition": "CBK",
       "countryPosition": null,
       "gender": "male",
-      "voteCount": 3,
-      "userEmail": "hunyci@mailinator.com"
+      "voteCount": 4,
+      "userEmail": "Admin@gmail.com"
     },
     {
       "id": "7cf4",
@@ -192,7 +187,45 @@
       "cityName": "Islamabad",
       "cityPosition": "PP-12",
       "countryPosition": "",
-      "gender": "male"
+      "gender": "male",
+      "voteCount": 1,
+      "userEmail": "shoaib@gmail.com"
+    },
+    {
+      "id": "52ab",
+      "name": "moneeb",
+      "age": "30",
+      "party": "plm n",
+      "cityName": "Multan",
+      "cityPosition": "CBK",
+      "countryPosition": "",
+      "gender": "male",
+      "voteCount": 1,
+      "userEmail": "shoaib@gmail.com"
+    },
+    {
+      "id": "28a7",
+      "name": "sdad",
+      "age": "1231",
+      "party": "dadasd",
+      "cityName": "Multan",
+      "cityPosition": "CBI",
+      "countryPosition": "",
+      "gender": "male",
+      "voteCount": 2,
+      "userEmail": "shoaib@gmail.com"
+    },
+    {
+      "id": "4803",
+      "name": "Shahzada",
+      "age": "25",
+      "party": "PTI",
+      "cityName": "Kamra",
+      "cityPosition": "CM",
+      "countryPosition": "",
+      "gender": "male",
+      "voteCount": 2,
+      "userEmail": "shoaib@gmail.com"
     }
   ],
   "countrylevelCandidates": [
@@ -217,7 +250,8 @@
       "cityPosition": "",
       "countryPosition": "President",
       "gender": "male",
-      "voteCount": 4
+      "voteCount": 5,
+      "userEmail": "Admin@gmail.com"
     },
     {
       "id": "97f8",
@@ -229,6 +263,18 @@
       "countryPosition": "Minister",
       "gender": "male",
       "voteCount": 0
+    },
+    {
+      "id": "3d6c",
+      "name": "erteter",
+      "age": "43",
+      "party": "iutututut",
+      "cityName": null,
+      "cityPosition": null,
+      "countryPosition": "President",
+      "gender": "male",
+      "voteCount": 1,
+      "userEmail": "shoaib@gmail.com"
     }
   ]
 }

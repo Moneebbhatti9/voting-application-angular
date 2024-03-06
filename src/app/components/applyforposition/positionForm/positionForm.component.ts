@@ -67,6 +67,7 @@ export class PositionFormComponent implements OnInit {
           `Congrats successfully applied for ${formValue.cityPosition} in ${formValue.cityName} `
         );
         this.positionForm.reset();
+        this.clearValidationErrors();
       });
     } else {
       this.ps.applyForCountryPosition(formValue).subscribe((data) => {
@@ -74,7 +75,14 @@ export class PositionFormComponent implements OnInit {
           `Congrats successfully applied for ${formValue.countryPosition}`
         );
         this.positionForm.reset();
+        this.clearValidationErrors();
       });
     }
+  }
+
+  clearValidationErrors() {
+    Object.keys(this.positionForm.controls).forEach((key) => {
+      this.positionForm.get(key)?.setErrors(null);
+    });
   }
 }

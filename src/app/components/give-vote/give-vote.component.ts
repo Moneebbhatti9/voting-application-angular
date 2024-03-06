@@ -76,16 +76,21 @@ export class GiveVoteComponent implements OnInit {
 
   getCityPositionCandidates() {
     this.ps.getAllAppliedCityCandidates().subscribe((res) => {
-      this.cityAppliedCandidates = res;
-      this.citydataSource.data = res;
+      this.cityAppliedCandidates = res.map((candidate: any) => ({
+        ...candidate,
+        voteCount: candidate.voteCount || 0,
+      }));
+      this.citydataSource.data = this.cityAppliedCandidates;
     });
   }
+
   getCountryPositionCandidates() {
     this.ps.getAllAppliedCountryCandidates().subscribe((res) => {
-      this.countryAppliedCandidates = res;
-      this.countrydataSource.data = res;
-
-      console.log('first', this.countryAppliedCandidates);
+      this.countryAppliedCandidates = res.map((candidate: any) => ({
+        ...candidate,
+        voteCount: candidate.voteCount || 0,
+      }));
+      this.countrydataSource.data = this.countryAppliedCandidates;
     });
   }
 
@@ -195,5 +200,14 @@ export class GiveVoteComponent implements OnInit {
       (candidate) =>
         candidate.userEmail === userEmail && candidate.cityPosition === position
     );
+  }
+
+  clearCityFilters() {
+    this.selectedCityPosition = '';
+    this.selectedCity = '';
+  }
+
+  clearCountryFilters() {
+    this.selectedCountryPosition = '';
   }
 }

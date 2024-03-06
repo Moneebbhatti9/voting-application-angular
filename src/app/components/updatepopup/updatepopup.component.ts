@@ -1,9 +1,14 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Component, OnInit } from '@angular/core';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  AbstractControl,
+} from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/Auth.service';
+import * as bcrypt from 'bcryptjs';
 
 @Component({
   selector: 'app-updatepopup',
@@ -11,6 +16,9 @@ import { AuthService } from 'src/app/services/Auth.service';
   styleUrls: ['./updatepopup.component.css'],
 })
 export class UpdatepopupComponent implements OnInit {
+  updateForm!: FormGroup;
+  candidateId: any;
+
   constructor(
     private formBuilder: FormBuilder,
     private activatedRoute: ActivatedRoute,
@@ -19,18 +27,30 @@ export class UpdatepopupComponent implements OnInit {
     private toastr: ToastrService
   ) {}
 
-  candidates: any = [];
-  candidate: any;
-  val: any;
   ngOnInit(): void {
-    let sub = this.activatedRoute.params.subscribe((params) => {
-      this.val = params['id'];
-    });
+    this.updateForm = this.formBuilder.group(
+      {
+        name: ['', Validators.required],
+        email: ['', [Validators.required, Validators.email]],
+        password: ['', [Validators.required, Validators.minLength(6)]],
+        confirmPassword: ['', Validators.required],
+      },
+      { validators: this.passwordMatchValidator }
+    );
 
-    console.log('Id' + this.val);
-    this.authService
-      .getCandidateById(this.val)
-      .subscribe((data) => (this.candidate = data));
+    this.activatedRoute.params.subscribe((params) => {
+      this.candidateId = params['id'];
+      this.loadCandidateData(this.candidateId);
+    });
+  }
+
+  loadCandidateData(id: any) {
+    this.authService.getCandidateById(id).subscribe((data) => {
+      this.updateForm.patchValue({
+        name: data.name,
+        email: data.email,
+      });
+    });
   }
 
   passwordMatchValidator(
@@ -38,39 +58,27 @@ export class UpdatepopupComponent implements OnInit {
   ): { [key: string]: boolean } | null {
     const password = control.get('password')?.value;
     const confirmPassword = control.get('confirmPassword')?.value;
-
     return password === confirmPassword ? null : { passwordMismatch: true };
   }
 
-  registerForm = this.formBuilder.group(
-    {
-      name: this.formBuilder.control('', Validators.required),
-      email: this.formBuilder.control('', [
-        Validators.required,
-        Validators.email,
-      ]),
-      registerAs: this.formBuilder.control('', Validators.required),
-      password: this.formBuilder.control(
-        '',
-        Validators.compose([Validators.required])
-      ),
-      confirmPassword: this.formBuilder.control('', Validators.required),
-    },
-    {
-      validator: this.passwordMatchValidator.bind(this),
-    }
-  );
-
   updateUser() {
-    this.authService.updateCandidate(this.candidate).subscribe((data) => {});
-    this.getCandidate(this.candidate.id);
-    this.toastr.success('Candidate updated successfully');
-    this.router.navigate(['/candidate/listing']);
-  }
+    if (this.updateForm.valid) {
+      const formData = this.updateForm.value;
+      const hashedPassword = bcrypt.hashSync(formData.password, 10);
+      formData.password = hashedPassword;
 
-  getCandidate(id: number) {
-    this.authService.getAllCandidate().subscribe((res) => {
-      this.candidate = res;
-    });
+      this.authService.updateCandidate(this.candidateId, formData).subscribe(
+        () => {
+          this.toastr.success('Candidate updated successfully');
+          this.router.navigate(['/candidate/listing']);
+        },
+        (error) => {
+          this.toastr.error('Failed to update candidate');
+          console.error(error);
+        }
+      );
+    } else {
+      this.toastr.error('Please enter valid data');
+    }
   }
 }

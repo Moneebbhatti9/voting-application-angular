@@ -8,9 +8,9 @@
       <form [formGroup]="positionForm" (ngSubmit)="submitPosition()">
         <mat-form-field class="full-width">
           <input matInput formControlName="name" placeholder="Position Name" />
-          <mat-error *ngIf="positionForm.get('name')?.hasError('required')">
+          <!-- <mat-error *ngIf="positionForm.get('name')">
             Name is required
-          </mat-error>
+          </mat-error> -->
         </mat-form-field>
 
         <mat-radio-group
@@ -20,16 +20,16 @@
           <mat-radio-button value="1">City Level</mat-radio-button>
           <mat-radio-button value="2">Country level</mat-radio-button>
         </mat-radio-group>
-        <mat-error *ngIf="positionForm.get('position')?.hasError('required')">
+        <!-- <mat-error *ngIf="positionForm.get('position')">
           Position is required
-        </mat-error>
+        </mat-error> -->
 
         <mat-form-field
           class="full-width"
           *ngIf="positionForm.value.position === '1'"
         >
           <input matInput formControlName="cityName" placeholder="City Name" />
-          <mat-error *ngIf="positionForm.get('cityName')?.hasError('required')">
+          <mat-error *ngIf="positionForm.get('cityName')">
             City Name is required
           </mat-error>
         </mat-form-field>

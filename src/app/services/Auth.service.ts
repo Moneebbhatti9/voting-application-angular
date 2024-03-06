@@ -64,12 +64,12 @@ export class AuthService {
     return this.http.post<any>(`${this.baseurl}/candidates`, candidateDetails);
   }
 
-  updateCandidate(user: any): Observable<void> {
-    const url = `${this.baseurl}/candidates/${user.id}`;
+  updateCandidate(candidate: any, user: any): Observable<void> {
+    const url = `${this.baseurl}/candidates/${candidate}`;
     return this.http.put<void>(url, user).pipe(map(() => user));
   }
-  updateVoter(user: any): Observable<void> {
-    const url = `${this.baseurl}/voters/${user.id}`;
+  updateVoter(voter: any, user: any): Observable<void> {
+    const url = `${this.baseurl}/voters/${voter}`;
     return this.http.put<void>(url, user).pipe(map(() => user));
   }
 

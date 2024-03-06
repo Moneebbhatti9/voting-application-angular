@@ -47,14 +47,14 @@ export class ElectionPositionComponent implements OnInit {
         this.positionService.addCityPosition(positionData).subscribe((res) => {
           this.toastr.success('City Position Added Successfully');
         });
+        this.positionForm.reset();
       } else if (positionValue == '2') {
         this.positionService
           .addCountryPosition(positionData)
           .subscribe((res) => {
             this.toastr.success('Country Position Added Successfully');
           });
-      } else {
-        this.toastr.error('Position not added');
+        this.positionForm.reset();
       }
     }
   }

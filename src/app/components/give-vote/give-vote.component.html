@@ -52,6 +52,10 @@
         </mat-select>
       </mat-form-field>
     </div>
+
+    <button mat-raised-button color="warn" (click)="clearCityFilters()">
+      Clear Filters
+    </button>
   </div>
   <table
     mat-table
@@ -121,6 +125,9 @@
         </mat-select>
       </mat-form-field>
     </div>
+    <button mat-raised-button color="warn" (click)="clearCountryFilters()">
+      Clear Filters
+    </button>
   </div>
   <table
     mat-table
